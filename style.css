@@ -20,53 +20,50 @@ body {
   color: #fff;
 }
 
-/* Overlay de búsqueda */
 .search-overlay {
   position: fixed;
-  /* fijo sobre la pantalla */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  /* negro semitransparente */
+  background: rgba(0, 0, 0, 0.6);
   display: none;
+  /* se activa con JS */
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 100px;
+  align-items: center;
   z-index: 2000;
-  /* más alto que header y carrito */
 }
 
 .search-overlay.active {
   display: flex;
 }
 
-.search-overlay.active {
-  display: flex;
-}
-
-/* Panel de búsqueda */
-.search-panel {
+.search-box {
+  position: relative;
+  /* importante para que el botón se posicione respecto a esta caja */
   background: #fff;
+  padding: 30px;
+  border-radius: 12px;
   width: 90%;
   max-width: 500px;
-  padding: 40px;
-  border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.search-panel input {
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 8px;
+/* Input de búsqueda */
+#searchInput {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
-  outline: none;
+  border-radius: 5px;
+  font-family: inherit;
+  /* respeta fuente definida en .search-box */
 }
 
-.search-results {
+#searchResults {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -77,8 +74,9 @@ body {
 .search-result-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
   border-radius: 8px;
   background: #f9f9f9;
 }
@@ -90,11 +88,37 @@ body {
   border-radius: 6px;
 }
 
-.search-result-item span {
-  font-weight: 500;
-  color: #f97316;
+.search-result-item .info {
+  flex: 1;
 }
 
+.search-result-item button {
+  background: #f97316;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-result-item button:hover {
+  background: #ea580c;
+}
+
+/* Botón de cerrar */
+#closeSearch {
+  position: absolute; /* ahora se posiciona respecto a .search-box */
+  top: 0.5rem;
+  /* espacio desde arriba */
+  right: 0.5rem;
+  /* espacio desde la derecha */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  /* asegurar que esté sobre todo */
+}
 
 /* HERO */
 .hero {
@@ -535,7 +559,8 @@ body {
 }
 
 .main-header .container {
-  position: relative; /* CLAVE */
+  position: relative;
+  /* CLAVE */
   height: 60px;
   display: flex;
   align-items: center;
@@ -713,7 +738,8 @@ body {
 
 
 .menu-section-wrapper {
-  padding-top: 100px; /* por el header fijo */
+  padding-top: 100px;
+  /* por el header fijo */
 }
 
 .menu-title {
@@ -745,6 +771,3 @@ body {
 .cafeteria {
   background-image: url("https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
-
-
-

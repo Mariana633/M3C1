@@ -9,6 +9,10 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Material Symbols -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -27,9 +31,9 @@
         <!-- Dentro del header, después de los links del menú -->
         <div class="search-icon" id="searchBtn">🔍</div>
 
-          <div class="cart-button" id="cartBtn">
-        🛒 <span id="cartCount">0</span>
-      </div>
+        <div class="cart-button" id="cartBtn">
+          🛒 <span id="cartCount">0</span>
+        </div>
     </div>
 
   </header>
@@ -37,9 +41,11 @@
   <!-- Búsqueda Overlay -->
   <div class="search-overlay" id="searchOverlay">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Buscar productos...">
+      <input type="text" id="searchInput" placeholder="Encuentra tus productos preferidos...">
       <div id="searchResults"></div>
-      <button id="closeSearch">Cerrar ✖</button>
+      <button id="closeSearch">
+        <span class="material-symbols-outlined">close</span>
+      </button>
     </div>
   </div>
   <section class="hero">
@@ -151,35 +157,35 @@
   </section>
 
 
-<section id="Menu" class="menu-section-wrapper">
-  <h2 class="menu-title">Nuestro menú</h2>
+  <section id="Menu" class="menu-section-wrapper">
+    <h2 class="menu-title">Nuestro menú</h2>
 
-  <div class="menu-section">
-    <div class="menu-card panaderia">
-      <div class="menu-content">
-        <h3>Panadería</h3>
-        <a href="panaderia.html" class="btn-menu">Ver productos</a>
+    <div class="menu-section">
+      <div class="menu-card panaderia">
+        <div class="menu-content">
+          <h3>Panadería</h3>
+          <a href="panaderia.html" class="btn-menu">Ver productos</a>
 
+        </div>
+      </div>
+
+      <div class="menu-card pasteleria">
+        <div class="menu-content">
+          <h3>Pastelería</h3>
+          <a href="pasteleria.html" class="btn-menu">Ver productos</a>
+
+        </div>
+      </div>
+
+      <div class="menu-card cafeteria">
+        <div class="menu-content">
+          <h3>Cafetería</h3>
+          <a href="cafeteria.html" class="btn-menu">Ver productos</a>
+
+        </div>
       </div>
     </div>
-
-    <div class="menu-card pasteleria">
-      <div class="menu-content">
-        <h3>Pastelería</h3>
-        <a href="pasteleria.html" class="btn-menu">Ver productos</a>
-
-      </div>
-    </div>
-
-    <div class="menu-card cafeteria">
-      <div class="menu-content">
-        <h3>Cafetería</h3>
-        <a href="cafeteria.html" class="btn-menu">Ver productos</a>
-
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
