@@ -12,6 +12,21 @@ body {
 
 
 /* NAVBAR */
+/* CONTENEDOR LOGO */
+.main-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* espacio entre icono y texto */
+}
+
+/* ICONO */
+.main-header .logo .material-symbols-outlined {
+  font-size: 32px;
+  /* tamaño del icono */
+  color: white;
+  /* o el color que uses */
+}
 
 /* Icono de lupa en el header */
 .search-icon {
@@ -107,7 +122,8 @@ body {
 
 /* Botón de cerrar */
 #closeSearch {
-  position: absolute; /* ahora se posiciona respecto a .search-box */
+  position: absolute;
+  /* ahora se posiciona respecto a .search-box */
   top: 0.5rem;
   /* espacio desde arriba */
   right: 0.5rem;
