@@ -37,11 +37,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Cerrar carrito al presionar el botón "Cerrar"
-  cartOverlay.addEventListener("click", (e) => {
-    // Si hace click en el overlay o en el botón con clase close-cart
-    if (e.target === cartOverlay || e.target.classList.contains("close-cart")) {
-      cartOverlay.classList.remove("active");
+  // Cerrar carrito al presionar el botón "Cerrar" o al hacer click fuera del carrito
+  if (cartOverlay) {
+    cartOverlay.addEventListener("click", (e) => {
+      // Si hace click en el overlay o en el botón con clase close-cart (o en un elemento hijo)
+      if (e.target === cartOverlay || (e.target.closest && e.target.closest('.close-cart'))) {
+        cartOverlay.classList.remove("active");
+      }
+    });
+  }
+
+  // Delegated click handler: robustly close cart when any element with .close-cart is clicked
+  document.addEventListener("click", (e) => {
+    const closeBtn = e.target.closest && e.target.closest('.close-cart');
+    if (closeBtn) {
+      if (cartOverlay) cartOverlay.classList.remove("active");
+    }
+  });
+
+  // Close the cart with the Escape key for convenience
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.key === "Esc") {
+      if (cartOverlay) cartOverlay.classList.remove("active");
     }
   });
 
@@ -129,6 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
       cart = [];
       saveCart();
       renderCart();
+      // Cerrar el overlay después de la compra
+      if (cartOverlay) cartOverlay.classList.remove("active");
     });
   }
 });
