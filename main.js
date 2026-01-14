@@ -186,10 +186,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Productos (tomados del HTML)
   const products = [
-    { name: "Café Espresso", price: 2500, img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93" },
-    { name: "Croissant", price: 1800, img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a" },
-    { name: "Pan de Campo", price: 3200, img: "https://images.unsplash.com/photo-1597604391235-a7429b4b350c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-    { name: "Capuccino", price: 2900, img: "https://images.unsplash.com/photo-1511920170033-f8396924c348" },
+    {
+      name: "Café Espresso",
+      price: 2500,
+      img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+      desc: "Intenso y aromático, preparado al momento."
+    },
+    {
+      name: "Croissant",
+      price: 1800,
+      img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a",
+      desc: "Crujiente y hojaldrado con mantequilla."
+    },
+    {
+      name: "Pan de Campo",
+      price: 3200,
+      img: "https://images.unsplash.com/photo-1597604391235-a7429b4b350c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      desc: "Masa madre fermentada 24 horas."
+    },
+    {
+      name: "Capuccino",
+      price: 2900,
+      img: "https://images.unsplash.com/photo-1511920170033-f8396924c348",
+      desc: "Café suave con espuma cremosa."
+    },
+    {
+      name: "Pain au Chocolat",
+      price: 2200,
+      img: "https://images.pexels.com/photos/8909323/pexels-photo-8909323.jpeg",
+      desc: "Hojaldrado relleno de chocolate oscuro, ideal para acompañar con café."
+    },
+    {
+      name: "Latte de Vainilla",
+      price: 3000,
+      img: "https://images.unsplash.com/photo-1511920170033-f8396924c348",
+      desc: "Espresso con leche vaporizada y un toque de sirope de vainilla, cremosa y aromática."
+    },
+    {
+      name: "Focaccia Artesanal",
+      price: 3500,
+      img: "https://plus.unsplash.com/premium_photo-1692309812344-fde93f207437?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      desc: "Focaccia suave con aceite de oliva, romero y sal marina. Perfecta para acompañar cualquier comida."
+    }
   ];
 
   // Función para renderizar resultados
@@ -209,7 +247,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <strong>${prod.name}</strong><br>
         <span>$${prod.price}</span>
       </div>
-      <button data-name="${prod.name}" data-price="${prod.price}">Agregar</button>
+      <button data-name="${prod.name}" data-price="${prod.price}">            <span class="material-symbols-outlined">
+              add
+            </span>Agregar</button>
     `;
       searchResults.appendChild(div);
     });
