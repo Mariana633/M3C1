@@ -622,16 +622,30 @@ body {
    SECCIÓN TESTIMONIOS
 ====================== */
 /* CONTENEDOR GENERAL */
-.testimonials{
+.testimonials {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 .testimonials h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+  margin-bottom: 36px;
+  font-weight: 700;
   color: #1b1b1b;
   position: relative;
   text-align: center;
+
+
+}
+
+.testimonials p {
+  text-align: center;
+  color: #78716c;
+  font-size: 15px;
+  margin-bottom: 40px;
 }
 
 /* Barrita debajo del título */
