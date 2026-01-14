@@ -242,6 +242,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+  const track = document.querySelector('.testimonials-track');
+  let items = document.querySelectorAll('.testimonial-item');
+
+  let index = 0;
+  const speed = 1600; // 🔥 más rápido
+
+  // DUPLICAR testimonios para loop infinito
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  // Recalcular items después de duplicar
+  items = document.querySelectorAll('.testimonial-item');
+  const itemWidth = items[0].offsetWidth + 24; // ancho + gap
+
+  function moveSlider() {
+    index++;
+
+    track.style.transition = 'transform 0.6s ease';
+    track.style.transform = `translateX(-${index * itemWidth}px)`;
+
+    // Reset invisible cuando llega a la mitad
+    if (index >= items.length / 2) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        index = 0;
+        track.style.transform = 'translateX(0)';
+      }, 500);
+    }
+  }
+
+  setInterval(moveSlider, 2000);
+
+
+  // MOVIMIENTO SLIDER TESTIMONIOS VERSIÓN MOBILE
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    track.style.transition = 'none'; // sin animación mientras arrastra
+  });
+
+  track.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+
+    currentX = e.touches[0].clientX;
+    const diff = startX - currentX;
+    const itemWidth = items[0].offsetWidth + 24;
+
+    track.style.transform = `translateX(-${index * itemWidth + diff}px)`;
+  });
+
 });
+
 
 
