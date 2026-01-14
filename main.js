@@ -112,7 +112,26 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
-  });
+    /* INIT */
+  renderCart();
+  /* ========================
+      CONFIRMAR COMPRA
+  ======================== */
+  const checkoutBtn = document.querySelector(".checkout");
+
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", () => {
+      if (cart.length === 0) {
+        showToast("Tu carrito está vacío"); return;
+      }
+
+      showToast("Gracias por tu compra ☕");
+      cart = [];
+      saveCart();
+      renderCart();
+    });
+  }
+});
 
 
   

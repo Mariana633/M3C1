@@ -10,6 +10,7 @@ body {
   color: #222;
 }
 
+
 /* HERO */
 .hero {
   display: flex;
@@ -309,9 +310,10 @@ body {
 /* CART BUTTON */
 .cart-button {
   position: fixed;
-  top: 25px;
+  top: 60px;
   right: 25px;
   background: #f97316;
+  border: 2px solid white; /* ancho + estilo + color del borde */
   color: #fff;
   padding: 12px 18px;
   border-radius: 30px;
