@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 
+
 body {
+  padding-top: 70px;
   font-family: 'Poppins', sans-serif;
   background: #fff;
   color: #222;
